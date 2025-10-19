@@ -1,102 +1,97 @@
 'use client';
-/*eslint-disable*/
+/* eslint-disable */
 
 import {
   Flex,
   List,
   ListItem,
   Text,
+  Icon,
   useColorModeValue,
+  HStack,
 } from '@chakra-ui/react';
+import { FaFacebook, FaTwitter, FaInstagram, FaGithub } from 'react-icons/fa';
 import Link from '@/components/link/Link';
 
 export default function Footer() {
-  const textColor = useColorModeValue('gray.500', 'white');
+  const textColor = useColorModeValue('gray.600', 'white');
+  const iconColor = useColorModeValue('gray.600', 'white');
+
   return (
     <Flex
       zIndex="3"
-      flexDirection={{
-        base: 'column',
-        xl: 'row',
-      }}
+      flexDirection={{ base: 'column', xl: 'row' }}
       alignItems="center"
       justifyContent="space-between"
       px={{ base: '30px', md: '50px' }}
-      pb="30px"
+      py="30px"
+      bg={useColorModeValue('gray.100', 'gray.900')}
+      borderTop="1px solid"
+      borderColor={useColorModeValue('gray.300', 'gray.700')}
     >
+      {/* Left: Copyright */}
       <Text
         color={textColor}
         fontSize={{ base: 'xs', md: 'sm' }}
-        textAlign={{
-          base: 'center',
-          xl: 'start',
-        }}
+        textAlign={{ base: 'center', xl: 'start' }}
         fontWeight="500"
         mb={{ base: '10px', xl: '0px' }}
       >
-        {' '}
         &copy; {new Date().getFullYear()}
-        <Text as="span" fontWeight="500" ms="4px">
-          Horizon UI AI Template. All Rights Reserved.
+        <Text as="span" fontWeight="600" ms="4px">
+          VridhHub. All Rights Reserved.
         </Text>
       </Text>
-      <List display="flex">
-        <ListItem
-          me={{
-            base: '10px',
-            md: '44px',
-          }}
-        >
+
+      {/* Middle: Links */}
+      <List display="flex" mb={{ base: '10px', xl: '0px' }}>
+        <ListItem me={{ base: '10px', md: '44px' }}>
           <Link
             fontWeight="500"
             fontSize={{ base: 'xs', md: 'sm' }}
             color={textColor}
-            href="https://horizon-ui.com/pro"
+            href="/"
           >
             Homepage
           </Link>
         </ListItem>
-        <ListItem
-          me={{
-            base: '10px',
-            md: '44px',
-          }}
-        >
+        <ListItem me={{ base: '10px', md: '44px' }}>
           <Link
             fontWeight="500"
             fontSize={{ base: 'xs', md: 'sm' }}
             color={textColor}
-            href="https://horizon-ui.notion.site/End-User-License-Agreement-8fb09441ea8c4c08b60c37996195a6d5"
-          >
-            License
-          </Link>
-        </ListItem>
-        <ListItem
-          me={{
-            base: '10px',
-            md: '44px',
-          }}
-        >
-          <Link
-            fontWeight="500"
-            fontSize={{ base: 'xs', md: 'sm' }}
-            color={textColor}
-            href="https://horizon-ui.notion.site/Terms-Conditions-6e79229d25ed48f48a481962bc6de3ee"
+            href="/terms"
           >
             Terms of Use
           </Link>
         </ListItem>
-        <ListItem>
+        <ListItem me={{ base: '10px', md: '44px' }}>
           <Link
             fontWeight="500"
             fontSize={{ base: 'xs', md: 'sm' }}
             color={textColor}
-            href="https://horizon-ui.notion.site/Privacy-Policy-8addde50aa8e408ca5c5f5811c38f971"
+            href="/privacy"
           >
             Privacy Policy
           </Link>
         </ListItem>
       </List>
+
+      {/* Right: Social Icons */}
+      <HStack spacing={4}>
+        <Link href="https://facebook.com" isExternal>
+          <Icon as={FaFacebook} w={5} h={5} color={iconColor} />
+        </Link>
+        <Link href="https://twitter.com" isExternal>
+          <Icon as={FaTwitter} w={5} h={5} color={iconColor} />
+        </Link>
+        <Link href="https://instagram.com" isExternal>
+          <Icon as={FaInstagram} w={5} h={5} color={iconColor} />
+        </Link>
+        <Link href="https://github.com/yourusername" isExternal>
+          <Icon as={FaGithub} w={5} h={5} color={iconColor} />
+        </Link>
+      </HStack>
     </Flex>
   );
 }
