@@ -11,7 +11,7 @@ yarn.lock
 # testing
 /coverage
 
-# production
+# production 
 /build
 build
 
