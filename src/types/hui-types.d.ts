@@ -10,7 +10,7 @@ declare global {
     src: string;
     height: number;
     width: number;
-    blurDataURL?: string;
+    blurDataURL?: string; 
   };
   interface RoutesType {
     // required props
