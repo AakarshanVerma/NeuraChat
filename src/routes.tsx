@@ -9,7 +9,7 @@ import {
 } from 'react-icons/md';
 import { IoMdPerson } from 'react-icons/io';
 import { LuHistory } from 'react-icons/lu';
-import { RoundedChart } from '@/components/icons/Icons';
+import { RoundedChart } from '@/components/icons/Icons'; 
 
 // Auth Imports
 import { IRoute } from './types/navigation';
